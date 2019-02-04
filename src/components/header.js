@@ -56,7 +56,10 @@ class Header extends Component {
   }
 
   render() {
-    const splitLocation = this.props.location.split('/')
+    console.log(this.props.location)
+    const splitLocation = this.props.location
+      ? this.props.location.split('/')
+      : []
     const splitSlug = splitLocation.filter(loc => {
       if (loc !== '') return loc
     })

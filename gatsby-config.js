@@ -33,7 +33,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // your wordpress source
-        baseUrl: `https://dedi105.canspace.ca/~raisingabusiness`,
+        baseUrl: `https://dedi105.canspace.ca/~raisingabusiness/`,
         protocol: `http`,
         // is it hosted on wordpress.com, or self-hosted?
         hostingWPCOM: false,
