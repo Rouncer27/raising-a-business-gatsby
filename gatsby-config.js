@@ -34,7 +34,7 @@ module.exports = {
       options: {
         // your wordpress source
         baseUrl: `database.raisingabusiness.ca`,
-        protocol: `http`,
+        protocol: `https`,
         // is it hosted on wordpress.com, or self-hosted?
         hostingWPCOM: false,
         // does your site use the Advanced Custom Fields Plugin?
