@@ -33,8 +33,8 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // your wordpress source
-        baseUrl: `https://dedi105.canspace.ca/~raisingabusiness/`,
-        protocol: `http`,
+        baseUrl: `database.raisingabusiness.ca`,
+        protocol: `https`,
         // is it hosted on wordpress.com, or self-hosted?
         hostingWPCOM: false,
         // does your site use the Advanced Custom Fields Plugin?
