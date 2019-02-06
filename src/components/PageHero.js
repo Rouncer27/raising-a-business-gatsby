@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import Img from 'gatsby-image'
+import React, { Component } from 'react';
+import Img from 'gatsby-image';
 
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const StyledPageHero = styled.section`
   position: relative;
@@ -9,7 +9,7 @@ const StyledPageHero = styled.section`
   height: 100%;
   min-height: 50rem;
   overflow: hidden;
-`
+`;
 
 const PageHeroWrapper = styled.div`
   position: absolute;
@@ -26,7 +26,7 @@ const PageHeroWrapper = styled.div`
     color: ${props => props.theme.white};
     text-transform: uppercase;
   }
-`
+`;
 
 const PageHeroImage = styled.div`
   position: absolute;
@@ -35,7 +35,16 @@ const PageHeroImage = styled.div`
   width: 100%;
   height: 100%;
   z-index: 1;
-`
+
+  .gatsby-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+`;
 
 const PageHeroOverlay = styled.div`
   position: absolute;
@@ -46,7 +55,7 @@ const PageHeroOverlay = styled.div`
   background: ${props => props.theme.grey};
   opacity: 0.4;
   z-index: 5;
-`
+`;
 
 class PageHero extends Component {
   render() {
@@ -60,8 +69,8 @@ class PageHero extends Component {
         </PageHeroImage>
         <PageHeroOverlay />
       </StyledPageHero>
-    )
+    );
   }
 }
 
-export default PageHero
+export default PageHero;

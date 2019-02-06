@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import Img from 'gatsby-image'
-import styled from 'styled-components'
+import React, { Component } from 'react';
+import Img from 'gatsby-image';
+import styled from 'styled-components';
 
-import SiteWrapper from './Styles/SiteWrapper'
+import SiteWrapper from './Styles/SiteWrapper';
 
-const PastGuestsSec = styled.section``
+const PastGuestsSec = styled.section``;
 
 const PastGuestsHeader = styled.div`
   width: 100%;
@@ -15,13 +15,13 @@ const PastGuestsHeader = styled.div`
     font-size: 3.6rem;
     font-weight: 500;
   }
-`
+`;
 const PastGuestsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-`
+`;
 
 const PastGuestsBio = styled.div`
   width: calc(50% - 4rem);
@@ -36,16 +36,21 @@ const PastGuestsBio = styled.div`
     width: calc(25% - 4rem);
     margin: 2rem;
   }
-`
+`;
 
 const PastGuestsBioImg = styled.div`
   width: 100%;
-  width: 20rem;
-  height: 20rem;
+  width: 12.5rem;
+  height: 12.5rem;
   margin: 0 auto;
   border-radius: 50%;
   overflow: hidden;
-`
+
+  @media (min-width: ${props => props.theme.bpTablet}) {
+    width: 20rem;
+    height: 20rem;
+  }
+`;
 
 const PastGuestsBioTitle = styled.div`
   width: 100%;
@@ -61,7 +66,7 @@ const PastGuestsBioTitle = styled.div`
     margin: 0 auto;
     font-size: 1.4rem;
   }
-`
+`;
 
 const PastGuestsBioSocial = styled.div`
   display: flex;
@@ -128,7 +133,7 @@ const PastGuestsBioSocial = styled.div`
       }
     }
   }
-`
+`;
 
 class PastGuests extends Component {
   render() {
@@ -141,12 +146,12 @@ class PastGuests extends Component {
 
           <PastGuestsContainer>
             {this.props.pastguests.map((guest, index) => {
-              const title = guest.title_or_name
-              const business = guest.position_or_business_name
+              const title = guest.title_or_name;
+              const business = guest.position_or_business_name;
               const bioImage = guest.image.localFile
                 ? guest.image.localFile.childImageSharp.fluid
-                : guest.image.source_url
-              const linksReq = guest.links_required
+                : guest.image.source_url;
+              const linksReq = guest.links_required;
               return (
                 <PastGuestsBio key={index}>
                   <PastGuestsBioImg>
@@ -173,7 +178,7 @@ class PastGuests extends Component {
                                 href={guest.link_to_website}
                               />
                             </p>
-                          )
+                          );
                         } else if (link === 'instagram') {
                           return (
                             <p className="instagram" key="instagram">
@@ -183,7 +188,7 @@ class PastGuests extends Component {
                                 href={guest.link_to_instagram}
                               />
                             </p>
-                          )
+                          );
                         } else if (link === 'twitter') {
                           return (
                             <p className="twitter" key="twitter">
@@ -193,7 +198,7 @@ class PastGuests extends Component {
                                 href={guest.link_to_twitter}
                               />
                             </p>
-                          )
+                          );
                         } else if (link === 'facebook') {
                           return (
                             <p className="facebook" key="facebook">
@@ -203,7 +208,7 @@ class PastGuests extends Component {
                                 href={guest.link_to_facebook}
                               />
                             </p>
-                          )
+                          );
                         } else if (link === 'linkedin') {
                           return (
                             <p className="linkedin" key="linkedin">
@@ -213,21 +218,21 @@ class PastGuests extends Component {
                                 href={guest.link_to_linkedin}
                               />
                             </p>
-                          )
+                          );
                         } else {
-                          return ''
+                          return '';
                         }
                       })}
                     </PastGuestsBioSocial>
                   )}
                 </PastGuestsBio>
-              )
+              );
             })}
           </PastGuestsContainer>
         </SiteWrapper>
       </PastGuestsSec>
-    )
+    );
   }
 }
 
-export default PastGuests
+export default PastGuests;

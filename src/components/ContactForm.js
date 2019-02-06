@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
+import React, { Component } from 'react';
+import styled from 'styled-components';
 
-const StyledForms = styled.section``
+const StyledForms = styled.section``;
 
 const StyledFormsWrapper = styled.section`
   display: flex;
@@ -10,15 +10,23 @@ const StyledFormsWrapper = styled.section`
   width: 100%;
   max-width: 95rem;
   margin: 0 auto;
-  padding: 15rem 2rem;
+  padding: 7.5rem 2rem;
+
+  @media (min-width: ${props => props.theme.bpTablet}) {
+    padding: 15rem 2rem;
+  }
 
   h3 {
     text-align: center;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 300;
     line-height: 1.25;
+
+    @media (min-width: ${props => props.theme.bpTablet}) {
+      font-size: 2.2rem;
+    }
   }
-`
+`;
 
 class ContactForm extends Component {
   render() {
@@ -28,8 +36,8 @@ class ContactForm extends Component {
           <h3>{this.props.conformsdesc}</h3>
         </StyledFormsWrapper>
       </StyledForms>
-    )
+    );
   }
 }
 
-export default ContactForm
+export default ContactForm;

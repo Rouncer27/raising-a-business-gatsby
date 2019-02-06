@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
-import Img from 'gatsby-image'
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import Img from 'gatsby-image';
 
 const HeroImage = styled.div`
   position: relative;
@@ -8,7 +8,7 @@ const HeroImage = styled.div`
   height: 75vh;
   overflow: hidden;
   background: ${props => props.theme.black};
-`
+`;
 
 const HeroImageWrapper = styled.div`
   position: absolute;
@@ -18,10 +18,15 @@ const HeroImageWrapper = styled.div`
   height: 100%;
 
   .rab-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     opacity: 0.4 !important;
   }
-`
+`;
 
 const HeroContent = styled.div`
   position: absolute;
@@ -57,15 +62,7 @@ const HeroContent = styled.div`
   .gatsby-image-wrapper {
     width: 500px !important;
   }
-
-  picture {
-    width: 500px;
-
-    img {
-      width: 500px !important;
-    }
-  }
-`
+`;
 
 class HeroImg extends Component {
   render() {
@@ -85,8 +82,8 @@ class HeroImg extends Component {
           </HeroContent>
         </HeroImageWrapper>
       </HeroImage>
-    )
+    );
   }
 }
 
-export default HeroImg
+export default HeroImg;

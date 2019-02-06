@@ -1,14 +1,14 @@
-import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
-import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
 // import { StaticQuery, graphql } from 'gatsby'
 
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-import Navigation from './Navigation'
-import Logo from './Logo'
+import Navigation from './Navigation';
+import Logo from './Logo';
 
 const StyledHeader = styled.div`
   position: ${props => (props.location ? 'absolute' : 'relative')};
@@ -18,21 +18,32 @@ const StyledHeader = styled.div`
   background: ${props => (props.location ? 'transparent' : props.theme.green)};
   text-align: center;
   z-index: 5000;
-`
+
+  @media (min-width: ${props => props.theme.bpTablet}) {
+    position: ${props => (props.location ? 'absolute' : 'relative')};
+  }
+
+  @media (min-width: ${props => props.theme.bpDesksm}) {
+  }
+`;
 
 const HeaderWrapper = styled.div`
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
   padding: 1rem;
-`
+`;
 
 const HeaderLogo = styled.div`
   display: inline-block;
   width: 100%;
   max-width: 35rem;
-  margin: 0 auto;
-  transform: translateY(-5rem);
+  margin: 1rem auto 0;
+
+  @media (min-width: ${props => props.theme.bpTablet}) {
+    margin: 0 auto;
+    transform: translateY(-5rem);
+  }
 
   h1 {
     margin: 0;
@@ -48,22 +59,21 @@ const HeaderLogo = styled.div`
       margin: 0 auto;
     }
   }
-`
+`;
 
 class Header extends Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   render() {
-    console.log(this.props.location)
     const splitLocation = this.props.location
       ? this.props.location.split('/')
-      : []
+      : [];
     const splitSlug = splitLocation.filter(loc => {
-      if (loc !== '') return loc
-    })
-    const slug = splitSlug.length === 0 ? '/' : splitSlug[0]
+      if (loc !== '') return loc;
+    });
+    const slug = splitSlug.length === 0 ? '/' : splitSlug[0];
     return (
       <StyledHeader
         location={
@@ -84,16 +94,16 @@ class Header extends Component {
           </HeaderLogo>
         </HeaderWrapper>
       </StyledHeader>
-    )
+    );
   }
 }
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
   siteTitle: ``,
-}
+};
 
-export default Header
+export default Header;

@@ -1,12 +1,16 @@
-import React, { Component } from 'react'
-import Img from 'gatsby-image'
-import styled from 'styled-components'
+import React, { Component } from 'react';
+import Img from 'gatsby-image';
+import styled from 'styled-components';
 
-import SiteWrapper from './Styles/SiteWrapper'
+import SiteWrapper from './Styles/SiteWrapper';
 
 const SideBySideSec = styled.section`
-  padding: 5rem 0;
-`
+  padding: 1rem 0;
+
+  @media (min-width: ${props => props.theme.bpTablet}) {
+    padding: 5rem 0;
+  }
+`;
 
 const SideByImage = styled.div`
   width: 100%;
@@ -24,7 +28,7 @@ const SideByImage = styled.div`
   img {
     object-fit: cover;
   }
-`
+`;
 
 const SideByContent = styled.div`
   width: 100%;
@@ -33,13 +37,15 @@ const SideByContent = styled.div`
     width: calc(50% - 3rem);
     margin-left: 3rem;
   }
-`
+`;
 
 const SideByBio = styled.div`
   margin: 4rem auto;
 
   &:first-of-type {
-    margin: 0 auto 4rem;
+    @media (min-width: ${props => props.theme.bpTablet}) {
+      margin: 0 auto 4rem;
+    }
   }
 
   &:last-of-type {
@@ -58,11 +64,16 @@ const SideByBio = styled.div`
   }
 
   p {
-    font-size: 1.4rem;
-    text-align: left;
+    font-size: 1.6rem;
+    text-align: center;
     line-height: 1.5;
+
+    @media (min-width: ${props => props.theme.bpTablet}) {
+      font-size: 1.4rem;
+      text-align: left;
+    }
   }
-`
+`;
 
 class SideBySide extends Component {
   render() {
@@ -81,13 +92,13 @@ class SideBySide extends Component {
                     <p>{bio.paragraph}</p>
                   </div>
                 </SideByBio>
-              )
+              );
             })}
           </SideByContent>
         </SiteWrapper>
       </SideBySideSec>
-    )
+    );
   }
 }
 
-export default SideBySide
+export default SideBySide;

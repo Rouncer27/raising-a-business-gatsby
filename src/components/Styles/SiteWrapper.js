@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const SiteWrapper = styled.div`
   display: flex;
@@ -6,11 +6,12 @@ const SiteWrapper = styled.div`
   justify-content: center;
   width: 100%;
   max-width: 45rem;
-  margin: 2rem auto;
+  margin: 0rem auto;
   padding: 2rem;
   text-align: center;
 
   @media (min-width: ${props => props.theme.bpTablet}) {
+    margin: 2rem auto;
     max-width: 95rem;
   }
 
@@ -25,6 +26,6 @@ const SiteWrapper = styled.div`
   @media (min-width: ${props => props.theme.bpDesklg}) {
     max-width: 180rem;
   }
-`
+`;
 
-export default SiteWrapper
+export default SiteWrapper;
