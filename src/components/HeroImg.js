@@ -35,7 +35,7 @@ const HeroContent = styled.div`
   transform: translate(-50%, -50%);
   color: #fff;
   text-align: center;
-  z-index: 5000;
+  z-index: 500;
 
   h1 {
     width: 50rem;

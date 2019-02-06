@@ -38,11 +38,11 @@ const HeaderLogo = styled.div`
   display: inline-block;
   width: 100%;
   max-width: 35rem;
-  margin: 1rem auto 0;
+  margin: 7.5rem auto 0;
 
   @media (min-width: ${props => props.theme.bpTablet}) {
     margin: 0 auto;
-    transform: translateY(-5rem);
+    transform: translateY(0);
   }
 
   h1 {
@@ -80,8 +80,8 @@ class Header extends Component {
           slug === '/' || slug === 'podcasts' || slug === 'blog' ? true : false
         }
       >
+        <Navigation />
         <HeaderWrapper>
-          <Navigation />
           <HeaderLogo
             ref={logowrap => (this.logowrap = ReactDOM.findDOMNode(logowrap))}
           >
